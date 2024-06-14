@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+<div class="background-container">
+       
+
+    <h1 class="welcome-message">Welcome to the Basic Banking System</h1>
+<button class="view-customers-button" onclick="window.location.href='{{ url_for('view_customers') }}'">View All Customers</button>
+    
+    <footer>
+        <p>This project is made by Vanshika Jain for The Sparks Foundation Internship.</p>
+<a href="https://www.linkedin.com/in/vanshika-jain-42724a291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_appss" target="_blank">
+            Connect with me on LinkedIn
+            <img src="{{ url_for('static', filename='images/Linkedin.jpeg') }}" alt="LinkedIn">
+        </a>
+    </footer>
+</div>
+</body>
+</html>

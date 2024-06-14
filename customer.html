@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <h1>{{ customer.name }}</h1>
+    <p>Email: {{ customer.email }}</p>
+    <p>Current Balance: {{ customer.current_balance }}</p>
+    <form action="{{ url_for('transfer_money') }}" method="POST">
+        <input type="hidden" name="sender_id" value="{{ customer.id }}">
+        <label for="receiver_id">Transfer To:</label>
+        <select name="receiver_id">
+            {% for cust in customers %}
+            <option value="{{ cust.id }}">{{ cust.name }}</option>
+            {% endfor %}
+        </select>
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" step="0.01" min="0">
+        <button type="submit"class="white-button">Transfer</button>
+    </form>
+   
+<button class="home-button" onclick="window.location.href='{{ url_for('home') }}'">Back to All Customers</button>
+    
+
+</body>
+</html>

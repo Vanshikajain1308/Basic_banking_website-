@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <h1 class="welcome-messages">All Customers</h1>
+    <ul>
+        {% for customer in customers %}
+        <li><a href="{{ url_for('view_customer', id=customer.id) }}">{{ customer.name }}</a></li>
+        {% endfor %}
+    </ul>
+   
+<button class="home-button" onclick="window.location.href='{{ url_for('home') }}'">Back to home</button>
+    
+
+</body>
+</html>
